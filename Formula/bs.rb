@@ -15,22 +15,23 @@
 # toolchain is required on the user's machine (D-05).
 #
 # Placeholders filled by CI:
-#   1.0.0        -> release version without the cli-v prefix, e.g. 1.0.0
-#   https://github.com/JensrudJ/burnedsecret-releases/releases/download/cli-v1.0.0/bs-macos-arm64.tar.gz      -> https://github.com/JensrudJ/burnedsecret-releases/releases/download/cli-vX/bs-macos-arm64.tar.gz
-#   121b9a75334cea06e70339d2a9bb22f3cf9b3d6f69dd37e4130d37d50408f15c   -> sha256 of the arm64 tarball
-#   https://github.com/JensrudJ/burnedsecret-releases/releases/download/cli-v1.0.0/bs-macos-x86_64.tar.gz     -> https://github.com/JensrudJ/burnedsecret-releases/releases/download/cli-vX/bs-macos-x86_64.tar.gz
-#   3b4d91b0bd6ebd8a6dba6f2a8e82e6b455b9e87a9cd11ed8582e046dd57a7d98  -> sha256 of the x86_64 tarball
+#   1.0.1        -> release version without the cli-v prefix, e.g. 1.0.0
+#   https://github.com/JensrudJ/burnedsecret-releases/releases/download/cli-v1.0.1/bs-macos-arm64.tar.gz      -> https://github.com/JensrudJ/burnedsecret-releases/releases/download/cli-vX/bs-macos-arm64.tar.gz
+#   2efdc4c5834e0d65d74b9abac48a6ed86641e172511b288eaf84d90289f7cb27   -> sha256 of the arm64 tarball
+#
+# Apple Silicon only for now: there is no x86_64 build (see codemagic.yaml,
+# cli-binary-macos). Intel Macs get a clear message pointing at pip.
 
 class Bs < Formula
   desc "Command-line interface for the burnedsecret.com zero-knowledge secrets API"
   homepage "https://burnedsecret.com"
-  version "1.0.0"
+  version "1.0.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/JensrudJ/burnedsecret-releases/releases/download/cli-v1.0.0/bs-macos-arm64.tar.gz"
-      sha256 "121b9a75334cea06e70339d2a9bb22f3cf9b3d6f69dd37e4130d37d50408f15c"
+      url "https://github.com/JensrudJ/burnedsecret-releases/releases/download/cli-v1.0.1/bs-macos-arm64.tar.gz"
+      sha256 "2efdc4c5834e0d65d74b9abac48a6ed86641e172511b288eaf84d90289f7cb27"
     end
     on_intel do
       odie "bs: no Intel (x86_64) macOS binary is published yet. " \
