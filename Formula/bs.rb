@@ -33,8 +33,8 @@ class Bs < Formula
       sha256 "121b9a75334cea06e70339d2a9bb22f3cf9b3d6f69dd37e4130d37d50408f15c"
     end
     on_intel do
-      url "https://github.com/JensrudJ/burnedsecret-releases/releases/download/cli-v1.0.0/bs-macos-x86_64.tar.gz"
-      sha256 "3b4d91b0bd6ebd8a6dba6f2a8e82e6b455b9e87a9cd11ed8582e046dd57a7d98"
+      odie "bs: no Intel (x86_64) macOS binary is published yet. " \
+           "Install with pip instead: pip install burnedsecret-cli"
     end
   end
 
