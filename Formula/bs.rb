@@ -15,9 +15,9 @@
 # toolchain is required on the user's machine (D-05).
 #
 # Placeholders filled by CI:
-#   1.0.3        -> release version without the cli-v prefix, e.g. 1.0.0
-#   https://github.com/JensrudJ/burnedsecret-releases/releases/download/cli-v1.0.3/bs-macos-arm64.tar.gz      -> https://github.com/JensrudJ/burnedsecret-releases/releases/download/cli-vX/bs-macos-arm64.tar.gz
-#   68b3364974e0a13c29f3a5f4f25922b63e0fd1d645737b872128076fdaf54049   -> sha256 of the arm64 tarball
+#   1.0.4        -> release version without the cli-v prefix, e.g. 1.0.0
+#   https://github.com/JensrudJ/burnedsecret-releases/releases/download/cli-v1.0.4/bs-macos-arm64.tar.gz      -> https://github.com/JensrudJ/burnedsecret-releases/releases/download/cli-vX/bs-macos-arm64.tar.gz
+#   1dbd0004f2a3fc43b50c62bdcf6eca51817cea8cf58d042d5290c7e6f9636241   -> sha256 of the arm64 tarball
 #
 # macOS Apple Silicon only, by decision (2026-09-17): no x86_64 build is
 # published or planned (see codemagic.yaml, cli-binary-macos). Intel Macs get a
@@ -29,13 +29,13 @@
 class Bs < Formula
   desc "Command-line interface for the burnedsecret.com zero-knowledge secrets API"
   homepage "https://burnedsecret.com"
-  version "1.0.3"
+  version "1.0.4"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/JensrudJ/burnedsecret-releases/releases/download/cli-v1.0.3/bs-macos-arm64.tar.gz"
-      sha256 "68b3364974e0a13c29f3a5f4f25922b63e0fd1d645737b872128076fdaf54049"
+      url "https://github.com/JensrudJ/burnedsecret-releases/releases/download/cli-v1.0.4/bs-macos-arm64.tar.gz"
+      sha256 "1dbd0004f2a3fc43b50c62bdcf6eca51817cea8cf58d042d5290c7e6f9636241"
     end
     on_intel do
       odie "bs: no Intel (x86_64) macOS binary is published (Apple Silicon only, by decision). " \
